@@ -4,7 +4,14 @@
     <title>Quest Manager</title>
     <style>
 
-    
+    body{
+        background-color: bisque;
+        display: block;
+    }
+
+    #taskInput{
+        background-color: bisque;
+    }
     .completed {
         text-decoration: line-through;
         color: gray;
@@ -21,19 +28,27 @@
         border-color: darkolivegreen;
     }
 
+    p{
+        text-decoration: underline;
+        color:darkolivegreen;
+    }
+    
+
     </style>
 
 </head> 
 
 <body>
+<main>
+
 <h1>Welcome to Quest Manager</h1>
+
+<p>Task Points: <span id="counter"></span></p>
 
 <input type="text" id="taskInput" placeholder="Add a new task...">
 
 <button id="addButton" onclick="addTask()">+</button>
 <ul id="taskList"></ul>
-
-<p>Task Points: <span id="counter"></span></p>
 
 <script>
     var counter = document.getElementById("counter");
@@ -79,4 +94,9 @@
     //counter.textContent = completedCount;
 </script>
 
-</body> </html>
+<figure>
+    <img src="my_character.jpg" width="320" alt="default character">
+</figure>
+</main>
+</body>
+</html>
