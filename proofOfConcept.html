@@ -1,47 +1,21 @@
 <!DOCTYPE html> 
-<html>
+<html lang="en">
 <head> 
+
     <title>Quest Manager</title>
-    <style>
-
-    body{
-        background-color: bisque;
-        display: block;
-    }
-
-    #taskInput{
-        background-color: bisque;
-    }
-    .completed {
-        text-decoration: line-through;
-        color: gray;
-    }
-
-    li {
-        list-style-type: none;
-        margin: 8px 0;
-    }
-
-    button {
-        border-radius: 50%;
-        background-color: darkolivegreen;
-        border-color: darkolivegreen;
-    }
-
-    p{
-        text-decoration: underline;
-        color:darkolivegreen;
-    }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="proofOfConcept.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     
-
-    </style>
-
 </head> 
 
 <body>
 <main>
-
 <h1>Welcome to Quest Manager</h1>
+
+<div class="container-fluid">
 
 <p>Task Points: <span id="counter"></span></p>
 
@@ -94,9 +68,14 @@
     //counter.textContent = completedCount;
 </script>
 
+</div>
+
+<div class="container-fluid">
 <figure>
-    <img src="my_character.jpg" width="320" alt="default character">
+    <img src="my_character.jpg" class="img-fluid" width="350px" alt="default character">
 </figure>
+</div>
+
 </main>
 </body>
 </html>
