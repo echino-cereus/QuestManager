@@ -71,10 +71,20 @@
 
 
 <div class="col-lg-6">
-<figure>
     <h2>My Character</h2>
-    <img src="my_character.jpg" class="img-fluid" width="350px" alt="default character">
+<figure>
+    <img id="image" src="my_character.jpg" class="img-fluid" width="350px" alt="default character">
 </figure>
+    <button id="buyNewAccessory" onclick="addAccessory()">Unlock Sword!(1 Task Point)</button>
+    <script>
+        function addAccessory() {
+            var img = document.getElementById("image");
+            img.src = "with_sword.jpg"; // Replace with the path to your new accessory image
+            img.className = "img-fluid";
+            //img.width = 100; // Set the width of the new accessory image
+            //document.querySelector("figure").appendChild(img);
+        }
+    </script>
 </div>
 
 </div> <!-- end of row div -->

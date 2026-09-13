@@ -20,7 +20,7 @@
         margin: 8px 0;
     }
 
-    button {
+    #addButton {
         border-radius: 50%;
         background-color: darkolivegreen;
         border-color: darkolivegreen;
