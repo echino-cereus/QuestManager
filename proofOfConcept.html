@@ -30,10 +30,18 @@
 <script>
     var counter = document.getElementById("counter");
     var completedCount = 0;
+    var input = document.getElementById("taskInput");
+    var list = document.getElementById("taskList");
+
+    input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            //addTask();
+            document.getElementById("addButton").click(); // Trigger the button click
+
+        }
+    });
 
     function addTask() {
-        var input = document.getElementById("taskInput");
-        var list = document.getElementById("taskList");
         
 
         if (input.value.trim() === "") { //so that it doesnt empty
@@ -55,8 +63,9 @@
                 text.classList.remove("completed");
             }
 
-            var checkedBoxes = list.querySelectorAll(`input[type="checkbox"]:checked`);
-            counter.textContent = checkedBoxes.length;
+            //var checkedBoxes = list.querySelectorAll(`input[type="checkbox"]:checked`);
+            completedCount = list.querySelectorAll(`input[type="checkbox"]:checked`).length;
+            counter.textContent = completedCount;
         };
         
         li.appendChild(checkbox);
@@ -76,11 +85,22 @@
     <img id="image" src="my_character.jpg" class="img-fluid" width="350px" alt="default character">
 </figure>
     <button id="buyNewAccessory" onclick="addAccessory()">Unlock Sword!(1 Task Point)</button>
+    
     <script>
         function addAccessory() {
+            if (completedCount <= 0) {
+                alert("You need at least 1 task point to unlock the sword!");
+                return;
+            }
+
+            completedCount--; // Deduct 1 task point
+            counter.textContent = completedCount; // Update the displayed count
+
             var img = document.getElementById("image");
             img.src = "with_sword.jpg"; // Replace with the path to your new accessory image
             img.className = "img-fluid";
+
+            
             //img.width = 100; // Set the width of the new accessory image
             //document.querySelector("figure").appendChild(img);
         }
