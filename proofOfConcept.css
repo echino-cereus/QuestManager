@@ -1,0 +1,40 @@
+
+    body{
+        background-color: bisque;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    #taskInput{
+        background-color: bisque;
+    }
+    .completed {
+        text-decoration: line-through;
+        color: gray;
+    }
+
+    li {
+        list-style-type: none;
+        margin: 8px 0;
+    }
+
+    #addButton {
+        border-radius: 50%;
+        background-color: darkolivegreen;
+        border-color: darkolivegreen;
+    }
+
+    p{
+        text-decoration: underline;
+        color:darkolivegreen;
+    }
+
+    /* .display-block{
+        display:flexbox;
+        width: 300px;
+        padding: 20px;
+        margin: 10px;
+    } */
+    
