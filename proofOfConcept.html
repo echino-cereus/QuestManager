@@ -16,7 +16,10 @@
 <h1>Welcome to Quest Manager</h1>
 
 <div class="container-fluid">
+<div class="row">
+<div class="col-lg-6">
 
+<h2>My Tasks</h2>
 <p>Task Points: <span id="counter"></span></p>
 
 <input type="text" id="taskInput" placeholder="Add a new task...">
@@ -48,10 +51,8 @@
 
             if (checkbox.checked) {
                 text.classList.add("completed");
-                //completedCount++;
             } else {
                 text.classList.remove("completed");
-                //completedCount--;
             }
 
             var checkedBoxes = list.querySelectorAll(`input[type="checkbox"]:checked`);
@@ -64,17 +65,20 @@
         list.appendChild(li);
         input.value = ""; //clears input
     }
-
-    //counter.textContent = completedCount;
 </script>
 
-</div>
+</div> <!-- end of col-lg-6 div -->
 
-<div class="container-fluid">
+
+<div class="col-lg-6">
 <figure>
+    <h2>My Character</h2>
     <img src="my_character.jpg" class="img-fluid" width="350px" alt="default character">
 </figure>
 </div>
+
+</div> <!-- end of row div -->
+</div> <!-- end of container div -->
 
 </main>
 </body>
