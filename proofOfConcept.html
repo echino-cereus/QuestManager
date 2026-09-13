@@ -1,8 +1,10 @@
 <!DOCTYPE html> 
 <html>
 <head> 
-    <title>To-Do List</title>
+    <title>Quest Manager</title>
     <style>
+
+    
     .completed {
         text-decoration: line-through;
         color: gray;
@@ -12,21 +14,35 @@
         list-style-type: none;
         margin: 8px 0;
     }
+
+    button {
+        border-radius: 50%;
+        background-color: darkolivegreen;
+        border-color: darkolivegreen;
+    }
+
     </style>
 
 </head> 
 
 <body>
-<h1>My To-Do List</h1>
+<h1>Welcome to Quest Manager</h1>
 
 <input type="text" id="taskInput" placeholder="Add a new task...">
-<button onclick="addTask()">Add</button>
+
+<button id="addButton" onclick="addTask()">+</button>
 <ul id="taskList"></ul>
 
+<p>Task Points: <span id="counter"></span></p>
+
 <script>
+    var counter = document.getElementById("counter");
+    var completedCount = 0;
+
     function addTask() {
         var input = document.getElementById("taskInput");
         var list = document.getElementById("taskList");
+        
 
         if (input.value.trim() === "") { //so that it doesnt empty
             return;
@@ -40,19 +56,27 @@
         text.textContent = " " + input.value;
 
         checkbox.onclick = function() { //crossing out
+
             if (checkbox.checked) {
                 text.classList.add("completed");
+                //completedCount++;
             } else {
                 text.classList.remove("completed");
+                //completedCount--;
             }
-        };
 
+            var checkedBoxes = list.querySelectorAll(`input[type="checkbox"]:checked`);
+            counter.textContent = checkedBoxes.length;
+        };
+        
         li.appendChild(checkbox);
         li.appendChild(text);
 
         list.appendChild(li);
         input.value = ""; //clears input
     }
+
+    //counter.textContent = completedCount;
 </script>
 
 </body> </html>
