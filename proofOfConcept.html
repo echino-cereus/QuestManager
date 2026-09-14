@@ -22,9 +22,12 @@
 <h2>My Tasks</h2>
 <p>Task Points: <span id="counter"></span></p>
 
-<input type="text" id="taskInput" placeholder="Add a new task...">
-
+<div class="inputWrapper">
+<input type="text" id="taskInput" placeholder="Add new...">
 <button id="addButton" onclick="addTask()">+</button>
+</div>
+
+
 <ul id="taskList"></ul>
 
 <script>
@@ -35,7 +38,6 @@
 
     input.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
-            //addTask();
             document.getElementById("addButton").click(); // Trigger the button click
 
         }
@@ -62,8 +64,6 @@
             } else {
                 text.classList.remove("completed");
             }
-
-            //var checkedBoxes = list.querySelectorAll(`input[type="checkbox"]:checked`);
             completedCount = list.querySelectorAll(`input[type="checkbox"]:checked`).length;
             counter.textContent = completedCount;
         };
@@ -84,10 +84,10 @@
 <figure>
     <img id="image" src="my_character.jpg" class="img-fluid" width="350px" alt="default character">
 </figure>
-    <button id="buyNewAccessory" onclick="addAccessory()">Unlock Sword!(1 Task Point)</button>
+    <button id="buySword" onclick="addSword()">Unlock Sword!(1 Task Point)</button>
     
     <script>
-        function addAccessory() {
+        function addSword() {
             if (completedCount <= 0) {
                 alert("You need at least 1 task point to unlock the sword!");
                 return;
@@ -100,9 +100,6 @@
             img.src = "with_sword.jpg"; // Replace with the path to your new accessory image
             img.className = "img-fluid";
 
-            
-            //img.width = 100; // Set the width of the new accessory image
-            //document.querySelector("figure").appendChild(img);
         }
     </script>
 </div>
